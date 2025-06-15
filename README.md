@@ -21,8 +21,8 @@
 
 ### Frontend:
 - Angular v19
-- Highcharts (Charts & Graphs)
-- Raw CSS (Responsive Design)
+- Highcharts
+- CSS
 
 ### Backend:
 - Java 21
