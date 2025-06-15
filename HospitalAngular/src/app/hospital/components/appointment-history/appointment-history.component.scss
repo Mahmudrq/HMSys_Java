@@ -1,0 +1,514 @@
+/* Appointment History - Raw CSS Design */
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Card Container */
+.card {
+  background: #ffffff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 24px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.card-header:hover::before {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.card-header h5 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.card-header h5::before {
+  content: '📅';
+  margin-right: 12px;
+  font-size: 1.3rem;
+}
+
+/* Card Body */
+.card-body {
+  padding: 32px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Empty States */
+.card-body > div.text-center.text-muted {
+  padding: 48px 24px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+  position: relative;
+}
+
+.card-body > div.text-center.text-muted::before {
+  content: '👤';
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: text-bottom;
+  border: 4px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Loading Container */
+.card-body > div.text-center:has(.spinner-border) {
+  padding: 48px 24px;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Table Header */
+.table thead {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.table thead th {
+  padding: 20px 24px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  position: relative;
+}
+
+.table thead th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* Table Body */
+.table tbody tr {
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.table tbody tr:hover {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  transform: scale(1.01);
+}
+
+.table tbody td {
+  padding: 20px 24px;
+  border: none;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Striped Rows */
+.table-striped tbody tr:nth-of-type(odd) {
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.table-striped tbody tr:nth-of-type(odd):hover {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  margin-right: 6px;
+  font-size: 0.7rem;
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge Variants */
+.bg-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+}
+
+.bg-primary::before {
+  content: '🕒';
+}
+
+.bg-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+}
+
+.bg-success::before {
+  content: '✅';
+}
+
+.bg-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+}
+
+.bg-danger::before {
+  content: '❌';
+}
+
+/* Date Styling */
+.table tbody td:first-child {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Doctor ID Styling */
+.table tbody td:nth-child(2) {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 0 4px;
+}
+
+/* Notes Column */
+.table tbody td:last-child {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .card-header {
+    padding: 20px 24px;
+  }
+  
+  .card-header h5 {
+    font-size: 1.3rem;
+  }
+  
+  .card-body {
+    padding: 24px;
+  }
+  
+  .table thead th,
+  .table tbody td {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 1rem 0.5rem;
+    border-radius: 12px;
+  }
+  
+  .card-header {
+    padding: 16px 20px;
+  }
+  
+  .card-header h5 {
+    font-size: 1.2rem;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Hide table headers on mobile */
+  .table thead {
+    display: none;
+  }
+  
+  /* Stack table rows as cards */
+  .table tbody tr {
+    display: block;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .table tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  .table tbody td {
+    display: block;
+    padding: 8px 0;
+    border: none;
+    text-align: left;
+  }
+  
+  .table tbody td::before {
+    content: attr(data-label) ': ';
+    font-weight: 700;
+    color: #667eea;
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 4px;
+  }
+  
+  /* Mobile-specific styles for data labels */
+  .table tbody td:first-child::before {
+    content: 'Date & Time: ';
+  }
+  
+  .table tbody td:nth-child(2)::before {
+    content: 'Doctor ID: ';
+  }
+  
+  .table tbody td:nth-child(3)::before {
+    content: 'Status: ';
+  }
+  
+  .table tbody td:last-child::before {
+    content: 'Notes: ';
+  }
+  
+  .table tbody td:last-child {
+    max-width: none;
+    white-space: normal;
+  }
+  
+  .table tbody td:nth-child(2) {
+    background: transparent;
+    border-radius: 0;
+    padding: 8px 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin: 0.5rem;
+  }
+  
+  .card-header {
+    padding: 12px 16px;
+  }
+  
+  .card-header h5 {
+    font-size: 1.1rem;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  .card-body > div.text-center.text-muted {
+    padding: 32px 16px;
+  }
+  
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+  }
+  
+  .table tbody tr {
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .table tbody td::before {
+    width: 80px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .card-header {
+    background: #f8f9fa !important;
+    color: #333 !important;
+  }
+  
+  .badge {
+    background: #6c757d !important;
+    color: #fff !important;
+  }
+  
+  .table tbody tr:hover {
+    background: transparent !important;
+    transform: none !important;
+  }
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Accessibility Improvements */
+.table tbody tr:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.badge:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .card-body {
+    background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  }
+  
+  .table {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .table thead {
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  }
+  
+  .table thead th {
+    color: #f9fafb;
+  }
+  
+  .table tbody td {
+    color: #e5e7eb;
+    border-bottom-color: #374151;
+  }
+  
+  .table tbody tr:hover {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  }
+  
+  .text-muted {
+    color: #9ca3af;
+  }
+}

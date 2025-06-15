@@ -1,0 +1,291 @@
+/* Base styles */
+.patient-details-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #1f2937;
+  background-color: #f9fafb;
+  padding: 20px 0;
+}
+
+/* Patient Header */
+.patient-header {
+  background-color: #10b981;
+  color: white;
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+}
+
+.patient-avatar {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  color: #10b981;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.patient-meta h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.patient-details {
+  font-size: 1rem;
+  color: #d1fae5;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.btn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: white;
+  color: #047857;
+}
+
+.btn-primary:hover {
+  background-color: #d1fae5;
+}
+
+.btn-success {
+  background-color: #047857;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #065f46;
+}
+
+/* Content Area */
+.patient-content {
+  padding-bottom: 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.card-header {
+  padding: 15px 20px;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.info-item {
+  margin-bottom: 15px;
+}
+
+.info-item label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.info-item span {
+  color: #4b5563;
+}
+
+/* Appointment Timeline */
+.appointment-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.timeline-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.timeline-content {
+  background-color: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+
+.appointment-date,
+.appointment-doctor,
+.appointment-status,
+.appointment-notes {
+  margin-bottom: 6px;
+}
+
+.appointment-status {
+  font-weight: bold;
+}
+
+.timeline-marker.scheduled,
+.appointment-status.scheduled {
+  background-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.timeline-marker.completed,
+.appointment-status.completed {
+  background-color: #10b981;
+  color: #10b981;
+}
+
+.timeline-marker.cancelled,
+.appointment-status.cancelled {
+  background-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Contact Info */
+.contact-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-item i {
+  font-size: 1.4rem;
+  color: #6b7280;
+}
+
+.contact-item label {
+  font-weight: bold;
+  color: #374151;
+}
+
+.contact-item span {
+  color: #4b5563;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Loading State */
+.loading-state {
+  padding: 60px 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #10b981;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.error-state {
+  padding: 60px 20px;
+  text-align: center;
+  color: #ef4444;
+}
+
+.error-state i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error-state h3 {
+  margin-bottom: 10px;
+  color: #b91c1c;
+}
+
+.error-state p {
+  color: #991b1b;
+}
+
+.error-state .btn {
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .patient-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .patient-avatar {
+    margin-bottom: 15px;
+  }
+
+  .text-end {
+    text-align: center;
+    margin-top: 15px;
+  }
+}

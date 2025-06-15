@@ -1,0 +1,96 @@
+.hero {
+  background: linear-gradient(135deg, #0a4275, #00d4ff);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+.hero button {
+  margin-top: 1rem;
+  background: white;
+  color: #0a4275;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.analytics {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: #f4f9fc;
+}
+.card {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.modules, .shortcuts, .benefits, .testimonials, .contact {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.module-grid, .shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.module, .shortcut-grid button {
+  background: #0a4275;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+.shortcut-grid button:hover, .module:hover {
+  background: #008bc0;
+}
+
+.benefits ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+.benefits li {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.testimonial {
+  margin-top: 1rem;
+  background: #eef6fb;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.testimonial span {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.contact button {
+  margin-top: 1rem;
+  background: #0a4275;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.contact button:hover {
+  background: #007bb8;
+}

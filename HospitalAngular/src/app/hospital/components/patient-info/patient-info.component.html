@@ -1,0 +1,27 @@
+<div class="card" *ngIf="patient">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5>Patient Information</h5>
+    <button class="btn btn-sm btn-outline-secondary" (click)="onEdit()">Edit</button>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Name:</strong> {{ patient.name }}</p>
+        <p><strong>Date of Birth:</strong> {{ patient.dob | date:'longDate' }}</p>
+        <p><strong>Gender:</strong> {{ patient.gender }}</p>
+        <p><strong>Blood Group:</strong> {{ patient.bloodGroup }}</p>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Phone:</strong> {{ patient.phone }}</p>
+        <p><strong>Address:</strong> {{ patient.address }}</p>
+        <p><strong>Insurance:</strong> {{ patient.insuranceType }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" *ngIf="!patient">
+  <div class="card-body text-center text-muted">
+    Select a patient to view their details.
+  </div>
+</div>
