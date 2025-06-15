@@ -17,10 +17,6 @@
 - Doctor selection
 - Appointment status tracking
 
-### 📊 Dashboard & Analytics
-- Bar chart: Patients by age group
-- Pie chart: Appointment status distribution
-- Real-time summary of key metrics
 ## 🛠️ Tech Stack
 
 ### Frontend:
